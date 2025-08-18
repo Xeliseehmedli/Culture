@@ -1,0 +1,131 @@
+footer {
+  background-color: black;
+  position: relative;
+  top: 50px;
+  .footer-content {
+    display: flex;
+    border-bottom: 1px solid #3e3e3e;
+    margin-left: 20px;
+    margin-right: 20px;
+   
+    gap: 20px;
+    img {
+      width: 15%;
+      height: 20%;
+      margin-top: 100px;
+      height: 50%;
+    }
+  }
+  .footer-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 40px;
+    width: 100%;
+    p {
+      color: white;
+      font-size: 20px;
+      font-weight: 500;
+      padding: 10px 0;
+    }
+  }
+  .contact-info {
+    p {
+      font-family: Roboto, sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 140%;
+    }
+    .info-text {
+      font-family: Roboto, sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 140%;
+      margin-top: -80px;
+    }
+    .contact-nav {
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #656565;
+        font-family: Roboto, sans-serif;
+        font-size: 18px;
+        line-height: 39px;
+      }
+      a:hover {
+        color: #e4c066;
+      }
+    }
+  }
+  .subscribe {
+    margin-top: -200px;
+    label {
+      color: white;
+      font-family: Roboto, sans-serif;
+      font-size: 21px;
+      line-height: 140%;
+      font-weight: bold;
+    }
+
+    .input-wrapper {
+      display: flex;
+
+      input {
+        flex: 1;
+        padding: 18px 37px;
+        border: 1px solid #ccc;
+        font-family: Roboto, sans-serif;
+        font-size: 16px;
+        border: none;
+      }
+
+      .submit-btn {
+        padding: 15px 30px;
+        background: #111;
+        color: #fff;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        font-family: Roboto, sans-serif;
+        font-size: 16px;
+        margin-right: 2%;
+      }
+      .submit-btn:hover {
+        color: #e4c066;
+      }
+    }
+  }
+  .footer-copyright {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    .footer-social {
+      display: flex;
+      gap: 15px;
+    }
+    .call {
+      position: relative;
+      left: -20px;
+      // top: -8px;
+      color: #e4c0668f;
+      font-size: 20px;
+      font-family: Poppins, sans-serif;
+      text-decoration: none;
+    }
+    p {
+      color: #e4c0668f;
+      font-family: Poppins, sans-serif;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}
+.footer-divider {
+  width: 1px;
+  background-color: #3e3e3e; /* xəttin rəngi */
+  height: auto; /* content qədər hündürlük */
+
+  margin-top: 80px;
+}

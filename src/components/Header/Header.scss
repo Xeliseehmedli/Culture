@@ -1,0 +1,140 @@
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 30px;
+  background-color: white;
+  height: 170px;
+  &.menu-open {
+    background-color: white;
+  }
+  .logo-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    img {
+      width: 350px;
+      height: 150px;
+      transition: width 0.3s ease, height 0.3s ease;
+    }
+  }
+
+  &.menu-open {
+    .logo-wrapper img {
+      width: 200px;
+      height: 70px;
+    }
+  }
+}
+
+.burger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  span {
+    width: 45px;
+    height: 4px;
+    background: #bababa;
+    transition: all 0.3s ease;
+  }
+}
+
+.menu {
+  display: flex;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  padding: 20px 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  z-index: 50;
+  align-items: center;
+  border-top: 2px solid #e7e3de;
+  &.show {
+    max-height: 80vh;
+    opacity: 1;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 27px;
+    padding: 0;
+    margin: 0;
+    margin-left: 27vw;
+
+    li {
+      font-size: 18px;
+      cursor: pointer;
+      font-family: "Anglecia Pro Display", sans-serif;
+      font-size: 22px;
+      color: #303030;
+    }
+  }
+
+  .menu-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 25vw;
+  }
+  button {
+    cursor: pointer;
+    padding: 12px 12px;
+    font-family: "Lexend", sans-serif;
+    font-size: 17px;
+    background-color: white;
+    border: 2px solid #bababa;
+    transition: width 0.4s ease, opacity 0.4s ease;
+  }
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  .header-text {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    p {
+      font-family: "Lato", sans-serif;
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    img:first-of-type {
+      width: 150px;
+    }
+  }
+}
+.header-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .header-image {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+  .header-social {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: -5vw;
+    top: -6vw;
+    gap: 20px;
+  }
+}

@@ -1,0 +1,97 @@
+.news-section {
+  padding: 20px 25px;
+
+  .title {
+    border-bottom: 1px solid #cdcdcd;
+    padding-bottom: 24px;
+    margin-bottom: 52px;
+    display: flex;
+    gap: 15px;
+    padding: 30px 0;
+    img {
+      width: 30px;
+      height: 30px;
+    }
+    h4 {
+      font-family: Inter, sans-serif;
+      color: #161616;
+      font-size: 26px;
+      letter-spacing: 2px;
+    }
+  }
+
+  .news-images {
+    margin-top: 5vw;
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 26px;
+    .right-news-item {
+      position: relative;
+      height: 100%;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      overflow: hidden;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      &:hover img {
+        transform: scale(1.05);
+      }
+
+      .right-news-detail {
+        background: rgba(0, 0, 0, 0.4);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 72px;
+        display: flex;
+        align-items: center;
+        padding-left: 22px;
+        color: #fff;
+        font-feature-settings: "clig" off, "liga" off;
+        font-family: Inter, sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding-right: 10px;
+        letter-spacing: -0.766px;
+      }
+      a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .state-image {
+        width: 550px !important;
+        height: 300px !important;
+      }
+      .susa-image {
+        width: 550px !important;
+        height: 300px !important;
+      }
+    }
+  }
+  .read-button {
+    text-align: center;
+    button {
+      background-color: #e4c066;
+      cursor: pointer;
+      border: none;
+      padding: 10px 30px;
+      font-size: 20px;
+    }
+  }
+}

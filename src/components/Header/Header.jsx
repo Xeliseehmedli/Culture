@@ -1,6 +1,6 @@
 import "./Header.scss";
 import { useState } from "react";
-
+import icon from "../../assets/icon.svg";
 import Logo from "../../assets/Logo.svg";
 import Signature from "../../assets/Signature.svg";
 import group from "../../assets/group.png";
@@ -11,7 +11,29 @@ import youtube from "../../assets/youtube.svg";
 import linkedin from "../../assets/linkedin.svg";
 import search from "../../assets/search.svg";
 export default function Header() {
+
   const [menuOpen, setMenuOpen] = useState(false);
+  const [nazirlikOpen, setNazirlikOpen] = useState(false);
+  const [fealiyyetOpen, setFealiyyetOpen] = useState(false);
+  const [tedbirler, setTedbirlerOpen] = useState(false);
+  const[mediaOpen,setMediaOpen]=useState(false)
+
+  const handleNazirlikToggle = (type) => {
+    if (type === "leave") setNazirlikOpen(false);
+    else if (type === "enter") setNazirlikOpen(true);
+  };
+  const handleFealiyyetToggle = (type) => {
+    if (type === "leave") setFealiyyetOpen(false);
+    else if (type === "enter") setFealiyyetOpen(true);
+  };
+  const handleTedbirlerToggle = (type) => {
+    if (type === "leave") setTedbirlerOpen(false);
+    else if (type === "enter") setTedbirlerOpen(true);
+  }; const handleMediaToggle = (type) => {
+    if (type === "leave") setMediaOpen(false);
+    else if (type === "enter") setMediaOpen(true);
+  };
+
   return (
     <>
       <header className={`header ${menuOpen ? "menu-open" : ""}`}>
@@ -29,8 +51,8 @@ export default function Header() {
           </div>
 
           <div
-            className={`burger ${menuOpen ? "active" : ""}`}
-            onClick={() => setMenuOpen(!menuOpen)}
+          className="burger"
+  onClick={() => setMenuOpen(prev => !prev)} 
           >
             <span></span>
             <span></span>
@@ -38,12 +60,53 @@ export default function Header() {
           </div>
         </div>
 
-        <nav className={`menu ${menuOpen ? "show" : ""}`}>
-          <ul>
-            <li>Nazirlik</li>
-            <li>Fəaliyyət</li>
-            <li>Tədbirlər</li>
-            <li>Media</li>
+        <nav   className={`menu ${menuOpen ? "show" : ""}`}>
+          <ul className="menu_list">
+            <li
+              onMouseEnter={() => handleNazirlikToggle("enter")}
+              onMouseLeave={() => handleNazirlikToggle("leave")}
+            >
+              Nazirlik
+                <ul className={`submenu ${nazirlikOpen ? "show" : ""}`}>
+        <li><img src={icon} alt="icon" /> Rəhbərlik</li>
+        <li><img src={icon} alt="icon" /> Apellyasiya Şurası</li>
+        <li><img src={icon} alt="icon" /> Qanunvericilik</li>
+        <li><img src={icon} alt="icon" /> Mədəniyyət təsisatları və müəssisələri</li>
+      </ul>
+            </li>
+            <li
+              onMouseEnter={() => handleFealiyyetToggle("enter")}
+              onMouseLeave={() => handleFealiyyetToggle("leave")}
+            >
+              Fəaliyyət
+              <ul className={`submenu ${fealiyyetOpen ? "show" : ""}`}>
+               <li><img src={icon} alt="icon" /> e-Culture</li>
+        <li><img src={icon} alt="icon" /> Muzey işi</li>
+        <li><img src={icon} alt="icon" /> Kitab işi və ədəbiyyat</li>
+        <li><img src={icon} alt="icon" /> Musiqi</li>
+              </ul>
+            </li>
+
+            <li
+              onMouseEnter={() => handleTedbirlerToggle("enter")}
+              onMouseLeave={() => handleTedbirlerToggle("leave")}
+            >
+              Tədbirlər
+              <ul  className={`submenu ${tedbirler ? "show" : ""}`}>
+               <li><img src={icon} alt="icon" /> Dövlət tədbirləri</li>
+               <li><img src={icon} alt="icon" /> Beynəlxalq tədbirlər</li>
+              </ul>
+            </li>
+            <li 
+             onMouseEnter={() => handleMediaToggle("enter")}
+              onMouseLeave={() => handleMediaToggle("leave")}
+            >Media
+            <ul className={`submenu ${mediaOpen ? "show" : ""}`}>
+              <li><img src={icon}alt="icon" />Xəbərlər</li>
+              <li><img src={icon}alt="icon" />Elanlar</li>
+              <li><img src={icon}alt="icon" />Multimedia</li>
+              </ul>
+              </li>
             <li>e-Xidmətlər</li>
           </ul>
           <div className="menu-actions">

@@ -5,6 +5,7 @@ header {
   padding: 20px 30px;
   background-color: white;
   height: 170px;
+  z-index: 200;
   &.menu-open {
     background-color: white;
   }
@@ -33,7 +34,11 @@ header {
   display: flex;
   flex-direction: column;
   gap: 5px;
-
+  &:hover ~ .menu {
+    display: flex;
+    max-height: 80vh;
+    opacity: 1;
+  }
   span {
     width: 45px;
     height: 4px;
@@ -42,59 +47,9 @@ header {
   }
 }
 
-.menu {
-  display: flex;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background: white;
-  padding: 20px 40px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
-  z-index: 50;
-  align-items: center;
-  border-top: 2px solid #e7e3de;
-  &.show {
-    max-height: 80vh;
-    opacity: 1;
-  }
-  ul {
-    list-style: none;
-    display: flex;
-    gap: 27px;
-    padding: 0;
-    margin: 0;
-    margin-left: 27vw;
 
-    li {
-      font-size: 18px;
-      cursor: pointer;
-      font-family: "Anglecia Pro Display", sans-serif;
-      font-size: 22px;
-      color: #303030;
-    }
-  }
 
-  .menu-actions {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-left: 25vw;
-  }
-  button {
-    cursor: pointer;
-    padding: 12px 12px;
-    font-family: "Lexend", sans-serif;
-    font-size: 17px;
-    background-color: white;
-    border: 2px solid #bababa;
-    transition: width 0.4s ease, opacity 0.4s ease;
-  }
-}
+
 
 .header-content {
   display: flex;
@@ -136,5 +91,87 @@ header {
     left: -5vw;
     top: -6vw;
     gap: 20px;
+  }
+}
+.menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  display: none;  
+  flex-direction: column;
+  z-index: 50;
+  border-top: 2px solid #e7e3de;
+  padding: 20px 40px;
+  flex-direction: row; 
+  justify-content: space-between; 
+  align-items: center; 
+  &.show {
+    display: flex; 
+  }
+
+  .menu_list {
+    list-style: none;
+    display: flex;
+    gap: 27px;
+    padding: 0;
+    margin: 0;
+    margin-left: 27vw;
+
+    li {
+      font-size: 22px;
+      cursor: pointer;
+      font-family: "Anglecia Pro Display", sans-serif;
+      color: #303030;
+      position: relative;
+    }
+  }
+
+  .menu-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 25vw;
+
+    button {
+      cursor: pointer;
+      padding: 12px;
+      font-family: "Lexend", sans-serif;
+      font-size: 17px;
+      background-color: white;
+      border: 2px solid #bababa;
+    }
+  }
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  z-index: 200;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+  li {
+    padding: 10px 20px;
+    white-space: nowrap;
+    color: #303030;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &.show {
+    display: block;
   }
 }

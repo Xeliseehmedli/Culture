@@ -1,16 +1,21 @@
+@font-face {
+  font-family: 'Anglecia Pro Display';
+  src: url('fonts/AngleciaProDisplay-Regular.woff2') format('woff2'),
+       url('fonts/AngleciaProDisplay-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
 footer {
-  background-color: black;
+  background-color: #161616;
   position: relative;
   top: 50px;
+  padding: 70px 50px;
   .footer-content {
     display: flex;
     border-bottom: 1px solid #3e3e3e;
-    margin-left: 20px;
-    margin-right: 20px;
-   
     gap: 20px;
     img {
-      width: 15%;
+      width: 20%;
       height: 20%;
       margin-top: 100px;
       height: 50%;
@@ -20,7 +25,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 20px 40px;
+    padding: 30px 30px;
     width: 100%;
     p {
       color: white;
@@ -60,7 +65,7 @@ footer {
     }
   }
   .subscribe {
-    margin-top: -200px;
+    margin-top: -180px;
     label {
       color: white;
       font-family: Roboto, sans-serif;
@@ -72,6 +77,7 @@ footer {
     .input-wrapper {
       display: flex;
 
+margin-top: 15px;
       input {
         flex: 1;
         padding: 18px 37px;
@@ -101,18 +107,22 @@ footer {
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
+    margin-top: 60px;
     .footer-social {
       display: flex;
       gap: 15px;
+      img{
+        opacity: .56;
+      }
     }
     .call {
       position: relative;
       left: -20px;
-      // top: -8px;
       color: #e4c0668f;
       font-size: 20px;
-      font-family: Poppins, sans-serif;
+       font-family: 'Anglecia Pro Display', sans-serif;
       text-decoration: none;
+      opacity: .56;
     }
     p {
       color: #e4c0668f;
@@ -124,8 +134,6 @@ footer {
 }
 .footer-divider {
   width: 1px;
-  background-color: #3e3e3e; /* xəttin rəngi */
-  height: auto; /* content qədər hündürlük */
-
-  margin-top: 80px;
+  background-color: #3e3e3e;
+  margin-top: 30px;
 }
